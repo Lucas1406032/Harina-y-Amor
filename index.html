@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entre Harina y Amor | Frilloas Caseras</title>
+<meta name="description" content="Frilloas caseras, frescas y listas para rellenar. Pedidos de lunes a miércoles y entregas coordinadas de viernes a domingo.">
+
+<meta property="og:title" content="Entre Harina y Amor | Frilloas Caseras">
+<meta property="og:description" content="Frilloas caseras, frescas y listas para rellenar. Hechas con cariño, en casa, para tu mesa.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/logo.png">
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Alex+Brush&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   CONFIGURACIÓN — reemplazar estos valores por los reales
+   ========================================================= */
+:root{
+  /* ---- datos de contacto / enlaces (EDITAR AQUÍ) ---- */
+  --whatsapp-number: "59891685589";        /* WHATSAPP_NUMBER  -> formato internacional sin + ni espacios, ej 59891685589 */
+  --whatsapp-channel-url: "https://chat.whatsapp.com/CRtm4ff9IjQ7HdSxIPqCzd?s=sw&p=a&mlu=4";              /* WHATSAPP_CHANNEL_URL -> enlace real del grupo/canal de novedades */
+}
+
+/* =========================================================
+   TOKENS DE DISEÑO
+   ========================================================= */
+:root{
+  --crema:        #F7EFE1;
+  --marfil:       #FBF8F2;
+  --beige:        #E9DAC1;
+  --beige-suave:  #F1E6D3;
+  --marron:       #5C3B27;
+  --marron-oscuro:#42291B;
+  --dorado:       #B4864B;
+  --dorado-claro: #CBA36B;
+  --camel:        #C9A878;
+  --oliva:        #8B8A5F;
+
+  --font-script: 'Alex Brush', cursive;
+  --font-serif:  'Fraunces', serif;
+  --font-sans:   'Nunito', sans-serif;
+
+  --radius: 4px;
+  --stitch: repeating-linear-gradient(90deg, var(--dorado-claro) 0 8px, transparent 8px 16px);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  background: var(--crema);
+  color: var(--marron);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before{
+  content:"";
+  position: fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:.5;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(180,134,75,.05) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139,138,95,.05) 0, transparent 45%);
+}
+
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+h1,h2,h3{ font-family: var(--font-serif); font-weight:600; color: var(--marron-oscuro); }
+
+.eyebrow{
+  font-family: var(--font-sans);
+  font-weight:700;
+  font-size: .74rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--dorado);
+}
+
+/* stitched frame — motivo firma de la marca */
+.stitched{
+  position: relative;
+  border: 1.5px solid var(--beige);
+  border-radius: var(--radius);
+}
+.stitched::before{
+  content:"";
+  position:absolute;
+  inset: 6px;
+  border: 1.5px dashed var(--camel);
+  border-radius: 2px;
+  pointer-events:none;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.5em;
+  font-family: var(--font-sans);
+  font-weight:700;
+  font-size: .92rem;
+  letter-spacing:.03em;
+  padding: 14px 30px;
+  border-radius: 999px;
+  cursor:pointer;
+  border: 1.5px solid transparent;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  white-space: nowrap;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-primary{
+  background: var(--marron);
+  color: var(--marfil);
+  box-shadow: 0 6px 18px rgba(92,59,39,.25);
+}
+.btn-primary:hover{ background: var(--marron-oscuro); box-shadow: 0 10px 22px rgba(92,59,39,.3); }
+.btn-outline{
+  background: transparent;
+  color: var(--marron);
+  border-color: var(--marron);
+}
+.btn-outline:hover{ background: var(--marron); color: var(--marfil); }
+.btn-gold{
+  background: var(--dorado);
+  color: var(--marfil);
+  box-shadow: 0 6px 18px rgba(180,134,75,.3);
+}
+.btn-gold:hover{ background:#9c7040; }
+
+.heart{ color: var(--dorado); }
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+header{
+  position: sticky;
+  top:0;
+  z-index: 100;
+  background: rgba(247,239,225,.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--beige);
+}
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 28px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand img{ height:46px; width:46px; border-radius:50%; }
+.brand span{
+  font-family: var(--font-script);
+  font-size: 1.7rem;
+  color: var(--marron-oscuro);
+  line-height:1;
+}
+.nav-links{
+  display:flex;
+  gap: 34px;
+  align-items:center;
+}
+.nav-links a{
+  font-size:.93rem;
+  font-weight:600;
+  color: var(--marron);
+  position:relative;
+  padding: 4px 0;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-2px;
+  height:1px;
+  background: var(--dorado);
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform .3s ease;
+}
+.nav-links a:hover::after{ transform: scaleX(1); }
+.nav-cta{
+  padding: 10px 30px;
+  font-size:.85rem;
+  min-width: 128px;
+  justify-content: center;
+  text-align: center;
+}
+.nav-links a.nav-cta{
+  color: var(--crema);
+}
+.nav-links a.nav-cta:hover{
+  color: var(--crema);
+}
+.burger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding: 6px;
+}
+.burger span{
+  width: 24px; height: 2px;
+  background: var(--marron);
+  border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.burger.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  padding: 64px 0 90px;
+  position: relative;
+  z-index:1;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items:center;
+}
+.hero-eyebrow{
+  font-family: var(--font-script);
+  font-size: 2.4rem;
+  color: var(--dorado);
+  display:block;
+  margin-bottom: 4px;
+}
+.hero h1{
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+.hero .tagline{
+  font-size: 1.15rem;
+  font-weight:600;
+  color: var(--marron);
+  margin-bottom: 14px;
+}
+.hero p.desc{
+  max-width: 46ch;
+  color: #6b503c;
+  margin-bottom: 34px;
+  font-size: 1.02rem;
+}
+.hero-actions{
+  display:flex;
+  gap: 16px;
+  flex-wrap:wrap;
+}
+.hero-image-wrap{
+  position: relative;
+}
+.hero-image-wrap .stitched{
+  padding: 14px;
+  background: var(--marfil);
+}
+.hero-image-wrap img{
+  border-radius: 3px;
+  aspect-ratio: 4/3.2;
+  object-fit: cover;
+}
+.hero-badge{
+  position:absolute;
+  bottom: -18px;
+  left: -18px;
+  background: var(--marron);
+  color: var(--marfil);
+  font-family: var(--font-script);
+  font-size: 1.5rem;
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height: 1.05;
+  box-shadow: 0 10px 26px rgba(92,59,39,.28);
+  transform: rotate(-8deg);
+}
+
+/* =========================================================
+   SECTION generic
+   ========================================================= */
+section{ padding: 88px 0; position:relative; z-index:1; }
+.section-head{
+  text-align:center;
+  max-width: 560px;
+  margin: 0 auto 52px;
+}
+.section-head h2{ font-size: clamp(1.8rem,3.4vw,2.4rem); margin-top:8px; }
+.section-head p{ color:#6b503c; margin-top:10px; }
+.divider{
+  width: 70px; height: 2px;
+  background: var(--stitch);
+  margin: 18px auto 0;
+}
+
+/* =========================================================
+   PRODUCTO
+   ========================================================= */
+.product-alt{ background: var(--beige-suave); }
+.product-card{
+  display:grid;
+  grid-template-columns: .95fr 1fr;
+  gap: 48px;
+  align-items:center;
+  background: var(--marfil);
+  border-radius: 10px;
+  overflow:hidden;
+  border: 1px solid var(--beige);
+}
+.product-card .img-side{ position:relative; height:100%; min-height: 340px; }
+.product-card .img-side img{ width:100%; height:100%; object-fit:cover; }
+.product-card .img-side::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent 60%, rgba(66,41,27,.35));
+}
+.product-info{ padding: 20px 42px 20px 0; }
+.product-info .eyebrow{ margin-bottom: 8px; display:block; }
+.product-info h3{ font-size: 1.9rem; margin-bottom: 6px; }
+.product-info .sub{ font-weight:700; color:var(--dorado); margin-bottom: 14px; }
+.product-info p.desc{ color:#6b503c; margin-bottom: 26px; }
+.qty-selector{
+  display:flex;
+  gap: 12px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.qty-btn{
+  font-family: var(--font-sans);
+  font-weight:700;
+  font-size: .88rem;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--camel);
+  background: var(--marfil);
+  color: var(--marron);
+  cursor:pointer;
+  transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
+}
+.qty-btn .off{ color: var(--dorado); font-weight:800; }
+.qty-btn:hover{ transform: translateY(-1px); border-color: var(--dorado); }
+.qty-btn.active{
+  background: var(--marron);
+  border-color: var(--marron);
+  color: var(--marfil);
+}
+.qty-btn.active .off{ color: var(--dorado-claro); }
+
+.price-row{
+  display:flex;
+  align-items:baseline;
+  gap: 6px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.price-row .original-price{
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #a08863;
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+.price-row .original-price:empty{ display:none; margin:0; }
+.price-row .currency{ font-family: var(--font-serif); font-size: 1.4rem; color: var(--dorado); }
+.price-row .amount{ font-family: var(--font-serif); font-size: 3.2rem; font-weight:600; color: var(--marron-oscuro); }
+.price-row .unit{ color:#8a7357; font-size:.95rem; margin-left:4px; }
+
+/* =========================================================
+   CARACTERÍSTICAS
+   ========================================================= */
+.features-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.feature{
+  text-align:center;
+  padding: 34px 20px;
+  background: var(--marfil);
+  border-radius: 8px;
+  border: 1px solid var(--beige);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.feature:hover{ transform: translateY(-6px); box-shadow: 0 14px 30px rgba(92,59,39,.1); }
+.feature .icon{ font-size: 1.8rem; margin-bottom: 14px; color: var(--dorado); }
+.feature h4{ font-family: var(--font-serif); font-size: 1.08rem; margin-bottom: 8px; color: var(--marron-oscuro); }
+.feature p{ font-size: .92rem; color:#7a6248; }
+
+/* =========================================================
+   HISTORIA
+   ========================================================= */
+.story{ background: var(--marron); color: var(--marfil); position:relative; overflow:hidden; }
+.story::before{
+  content:"❧";
+  position:absolute;
+  font-size: 14rem;
+  right: -40px; top:-60px;
+  color: rgba(255,255,255,.04);
+}
+.story-inner{
+  max-width: 680px;
+  margin: 0 auto;
+  text-align:center;
+}
+.story h2{ color: var(--marfil); }
+.story .divider{ background: repeating-linear-gradient(90deg, rgba(203,163,107,.7) 0 8px, transparent 8px 16px); }
+.story p{
+  font-size: 1.12rem;
+  color: #e9d9c4;
+  margin-top: 22px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   COMO PEDIR
+   ========================================================= */
+.steps{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+}
+.step{
+  position:relative;
+  padding: 36px 28px;
+  background: var(--marfil);
+  border-radius: 8px;
+  border: 1px solid var(--beige);
+}
+.step .num{
+  font-family: var(--font-script);
+  font-size: 2.6rem;
+  color: var(--dorado-claro);
+  line-height:1;
+  display:block;
+  margin-bottom: 12px;
+}
+.step h4{ font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 8px; }
+.step p{ color:#7a6248; font-size:.95rem; }
+.step .when{
+  display:inline-block;
+  margin-top: 14px;
+  font-weight:700;
+  font-size: .82rem;
+  letter-spacing:.03em;
+  color: var(--marron);
+  background: var(--beige-suave);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   PEDIDOS / ENTREGAS
+   ========================================================= */
+.info-alt{ background: var(--beige-suave); }
+.info-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.info-card{
+  background: var(--marfil);
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px solid var(--beige);
+}
+.info-card .eyebrow{ margin-bottom:10px; display:block; }
+.info-card h3{ font-size: 1.5rem; margin-bottom: 6px; }
+.info-card .when{
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--dorado);
+  margin-bottom: 18px;
+}
+.info-card p{ color:#6b503c; margin-bottom: 10px; }
+.points{ margin-top: 18px; }
+.points li{
+  display:flex;
+  align-items:flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--beige);
+  font-size: .96rem;
+  color: var(--marron);
+}
+.points li:first-child{ border-top:none; }
+.points li .tick{ color: var(--dorado); font-weight:700; }
+
+/* =========================================================
+   CONSERVACION
+   ========================================================= */
+.preserve{
+  display:flex;
+  justify-content:center;
+  gap: 40px;
+  flex-wrap:wrap;
+}
+.preserve-item{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  background: var(--marfil);
+  border: 1px solid var(--beige);
+  padding: 20px 30px;
+  border-radius: 999px;
+  min-width: 260px;
+}
+.preserve-item .icon{ font-size: 1.6rem; color: var(--dorado); }
+.preserve-item strong{ font-family: var(--font-serif); font-size: 1.02rem; color: var(--marron-oscuro); display:block; }
+.preserve-item span.small{ font-size: .85rem; color:#8a7357; }
+
+/* =========================================================
+   METODOS DE PAGO
+   ========================================================= */
+.payment-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.payment-card{
+  background: var(--marfil);
+  border: 1px solid var(--beige);
+  border-radius: 10px;
+  padding: 34px 30px;
+  text-align:center;
+}
+.payment-card .icon{ font-size: 1.9rem; display:block; margin-bottom: 12px; }
+.payment-card h4{ font-family: var(--font-serif); font-size: 1.15rem; color: var(--marron-oscuro); margin-bottom: 8px; }
+.payment-card p{ font-size: .92rem; color:#7a6248; }
+.payment-methods{
+  margin-top: 16px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap: 8px;
+}
+.payment-methods li{
+  font-size: .82rem;
+  font-weight:700;
+  color: var(--marron);
+  background: var(--beige-suave);
+  border: 1px solid var(--beige);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* =========================================================
+   CANAL DE DIFUSION
+   ========================================================= */
+.channel{ background: var(--marron-oscuro); color: var(--marfil); }
+.channel-grid{
+  display:grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 56px;
+  align-items:center;
+}
+.channel h2{ color: var(--marfil); text-align:left; }
+.channel .section-head{ text-align:left; margin:0 0 26px 0; max-width:520px; }
+.channel .divider{ margin-left:0; background: repeating-linear-gradient(90deg, rgba(203,163,107,.7) 0 8px, transparent 8px 16px); }
+.channel p.desc{ color:#e9d9c4; margin-bottom: 30px; max-width: 46ch; }
+.qr-box{
+  background: var(--marfil);
+  border-radius: 10px;
+  padding: 26px;
+  text-align:center;
+}
+.qr-box .stitched{ border-color: var(--beige); }
+.qr-placeholder{
+  aspect-ratio: 1/1;
+  max-width: 220px;
+  margin: 20px auto;
+  background: var(--beige-suave);
+  border: 1.5px dashed var(--camel);
+  border-radius: 6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap: 8px;
+}
+.qr-placeholder span.label{
+  font-family: var(--font-serif);
+  color: var(--marron);
+  font-weight:600;
+  font-size: .95rem;
+}
+.qr-placeholder span.qr-icon{ font-size: 1.8rem; color: var(--camel); }
+.qr-box .caption{ color:#6b503c; font-size:.86rem; margin-top: 6px; }
+.qr-box .caption strong{ display:block; color: var(--marron-oscuro); font-family: var(--font-serif); font-size: 1rem; margin-bottom: 4px;}
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+.final-cta{
+  text-align:center;
+}
+.final-cta h2{ font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+.final-cta p{ color:#6b503c; margin: 14px 0 30px; font-size: 1.05rem; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{
+  background: var(--crema);
+  border-top: 1px solid var(--beige);
+  padding: 54px 0 30px;
+  text-align:center;
+}
+footer .brand-name{
+  font-family: var(--font-script);
+  font-size: 2.1rem;
+  color: var(--marron-oscuro);
+}
+footer .slogan{ color:#8a7357; margin: 6px 0 24px; font-size:.95rem; }
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap: 30px;
+  margin-bottom: 26px;
+  flex-wrap:wrap;
+}
+.footer-links a{
+  font-size:.9rem;
+  font-weight:700;
+  color: var(--marron);
+  border-bottom: 1px solid transparent;
+  padding-bottom:2px;
+}
+.footer-links a:hover{ border-color: var(--dorado); color: var(--dorado); }
+footer .thanks{
+  font-size: .85rem;
+  color:#a08863;
+  border-top: 1px dashed var(--beige);
+  padding-top: 20px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   REVEAL ANIMATIONS
+   ========================================================= */
+.reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible{ opacity:1; transform:none; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; gap:44px; }
+  .hero-actions{ justify-content:flex-start; }
+  .product-card{ grid-template-columns: 1fr; }
+  .product-card .img-side{ min-height: 260px; }
+  .product-info{ padding: 8px 28px 34px; }
+  .features-grid{ grid-template-columns: 1fr 1fr; }
+  .steps{ grid-template-columns: 1fr; }
+  .info-grid{ grid-template-columns: 1fr; }
+  .payment-grid{ grid-template-columns: 1fr; }
+  .channel-grid{ grid-template-columns: 1fr; }
+  .channel .section-head{ text-align:center; margin: 0 auto 26px; }
+  .channel p.desc{ margin-left:auto; margin-right:auto; }
+  .channel .divider{ margin: 18px auto 0; }
+}
+
+@media (max-width: 720px){
+  .nav-links{
+    position: fixed;
+    top: 73px; left:0; right:0;
+    background: var(--marfil);
+    flex-direction:column;
+    align-items:flex-start;
+    padding: 22px 28px 28px;
+    gap: 18px;
+    border-bottom: 1px solid var(--beige);
+    transform: translateY(-130%);
+    transition: transform .35s ease;
+    z-index: 90;
+  }
+  .nav-links.open{ transform: translateY(0); }
+  .nav-links .nav-cta{ margin-top: 4px; }
+  .burger{ display:flex; }
+  section{ padding: 64px 0; }
+  .hero{ padding: 44px 0 64px; }
+  .features-grid{ grid-template-columns: 1fr; }
+  .preserve{ flex-direction:column; align-items:stretch; }
+  .preserve-item{ min-width:0; }
+  .hero-badge{ width:78px; height:78px; font-size:1.15rem; bottom:-14px; left:-10px; }
+}
+
+@media (max-width: 420px){
+  .container{ padding: 0 18px; }
+  .brand span{ font-size: 1.4rem; }
+  .brand img{ height:38px; width:38px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#inicio" class="brand">
+      <img src="images/logo.png" alt="Logo Entre Harina y Amor">
+      <span>Entre Harina y Amor</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#frilloas">Frilloas</a>
+      <a href="#como-pedir">Cómo pedir</a>
+      <a href="#entregas">Entregas</a>
+      <a href="#canal">Novedades</a>
+      <a href="#" class="btn btn-primary nav-cta" id="navWhatsapp">Pedir <span class="heart">♡</span></a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="hero-eyebrow">Entre Harina y Amor</span>
+        <h1>Frilloas Caseras</h1>
+        <p class="tagline">Caseras, frescas y listas para rellenar <span class="heart">♡</span></p>
+        <p class="desc">Preparadas con cariño para que vos solo tengas que elegir el relleno.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary" id="heroWhatsapp">Pedir por WhatsApp</a>
+          <a href="#frilloas" class="btn btn-outline">Conocé las frilloas</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap reveal">
+        <div class="stitched">
+          <img src="images/frilloas-hero.jpg" alt="Frilloas caseras finas y doradas, apiladas y enrolladas, listas para rellenar">
+        </div>
+        <div class="hero-badge">hecho<br>a mano</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTO -->
+  <section id="frilloas" class="product-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Nuestro producto</span>
+        <h2>Nuestras frilloas <span class="heart">♡</span></h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="img-side">
+          <img src="images/frilloas-hero.jpg" alt="Frilloas caseras en bandeja, finas y ligeramente doradas">
+        </div>
+        <div class="product-info">
+          <span class="eyebrow">Frilloas caseras</span>
+          <h3>Bandeja x15 unidades</h3>
+          <p class="sub">Finas, suaves y listas para rellenar</p>
+          <p class="desc">Preparadas de a poco, en casa, con la receta de siempre. Perfectas para el desayuno, la merienda o para compartir con quien quieras.</p>
+
+          <div class="qty-selector" role="group" aria-label="Elegí la cantidad">
+            <button type="button" class="qty-btn active" id="qtyOne" data-price="200" data-original="" data-unit="1 bandeja x15">Una bandeja</button>
+            <button type="button" class="qty-btn" id="qtyTwo" data-price="360" data-original="400" data-unit="2 bandejas x15">Dos bandejas <span class="off">(10% OFF)</span></button>
+          </div>
+
+          <div class="price-row">
+            <span class="original-price" id="originalPrice"></span>
+            <span class="currency">$</span>
+            <span class="amount" id="priceAmount">200</span>
+            <span class="unit" id="priceUnit">1 bandeja x15</span>
+          </div>
+          <a href="#" class="btn btn-primary" id="productWhatsapp">Pedir ahora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARACTERISTICAS -->
+  <section id="caracteristicas">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Lo que nos define</span>
+        <h2>Así son nuestras frilloas</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="features-grid">
+        <div class="feature reveal">
+          <div class="icon">♡</div>
+          <h4>Caseras</h4>
+          <p>Hechas con dedicación y cariño.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="icon">✦</div>
+          <h4>Frescas</h4>
+          <p>Preparadas especialmente para cada pedido.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="icon">🥞</div>
+          <h4>Listas para rellenar</h4>
+          <p>Ideales para comidas dulces o saladas.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="icon">❄</div>
+          <h4>Aptas para freezer</h4>
+          <p>Prácticas para tener siempre a mano.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section class="story">
+    <div class="container story-inner reveal">
+      <span class="eyebrow" style="color:var(--dorado-claro)">Nuestra esencia</span>
+      <h2>Hechas con amor <span class="heart" style="color:var(--dorado-claro)">♡</span></h2>
+      <div class="divider"></div>
+      <p>Entre Harina y Amor es un pequeño emprendimiento casero. Cada bandeja se prepara a mano, con tiempo y dedicación, cuidando cada detalle como si fuera para nuestra propia mesa. No somos una fábrica: somos una cocina real, con ganas de que lo que comas hoy te sepa a algo hecho especialmente para vos.</p>
+    </div>
+  </section>
+
+  <!-- COMO PEDIR -->
+  <section id="como-pedir">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Paso a paso</span>
+        <h2>¿Cómo hago mi pedido?</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">01</span>
+          <h4>Hacé tu pedido</h4>
+          <p>Escribinos por WhatsApp contándonos cuántas bandejas necesitás.</p>
+          <span class="when">Lunes a miércoles</span>
+        </div>
+        <div class="step reveal">
+          <span class="num">02</span>
+          <h4>Coordinamos</h4>
+          <p>Confirmamos el pedido y definimos juntos el punto de entrega.</p>
+          <span class="when">Por WhatsApp</span>
+        </div>
+        <div class="step reveal">
+          <span class="num">03</span>
+          <h4>Recibí tus frilloas</h4>
+          <p>Retirás o coordinamos la entrega, siempre calentitas de cariño.</p>
+          <span class="when">Viernes a domingo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDOS Y ENTREGAS -->
+  <section id="entregas" class="info-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Información</span>
+        <h2>Pedidos y entregas</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <span class="eyebrow">Pedidos</span>
+          <h3>Tomamos pedidos</h3>
+          <p class="when">Lunes a miércoles</p>
+          <p>Pedidos únicamente por WhatsApp. Contanos qué necesitás y coordinamos todo por ahí.</p>
+          <a href="#" class="btn btn-outline" id="ordersWhatsapp" style="margin-top:10px;">Escribinos</a>
+        </div>
+
+        <div class="info-card reveal">
+          <span class="eyebrow">Entregas</span>
+          <h3>Entregamos</h3>
+          <p class="when">Viernes a domingo</p>
+          <p>Las entregas se coordinan previamente. Estos son nuestros puntos de entrega:</p>
+          <ul class="points">
+            <li><span class="tick">✓</span> Retiro en domicilio — Cordón</li>
+            <li><span class="tick">✓</span> Facultad de Psicología</li>
+            <li><span class="tick">✓</span> Plaza de los Bomberos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSERVACION -->
+  <section id="conservacion">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Un detalle más</span>
+        <h2>Para disfrutarlas mejor</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="preserve reveal">
+        <div class="preserve-item">
+          <span class="icon">❄</span>
+          <div>
+            <strong>Conservar refrigerado</strong>
+            <span class="small">Mantienen su frescura por más tiempo</span>
+          </div>
+        </div>
+        <div class="preserve-item">
+          <span class="icon">🧊</span>
+          <div>
+            <strong>Aptas para freezer</strong>
+            <span class="small">Prácticas para tener siempre a mano</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODOS DE PAGO -->
+  <section id="pagos" class="info-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Formas de pago</span>
+        <h2>¿Cómo podés pagar?</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="payment-grid">
+        <div class="payment-card reveal">
+          <span class="icon">💵</span>
+          <h4>Efectivo</h4>
+          <p>Al momento de retirar o recibir tu pedido.</p>
+        </div>
+        <div class="payment-card reveal">
+          <span class="icon">🏦</span>
+          <h4>Transferencia</h4>
+          <p>Coordinamos los datos por WhatsApp al confirmar tu pedido.</p>
+          <ul class="payment-methods">
+            <li>Prex</li>
+            <li>BROU</li>
+            <li>Mercado Pago</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANAL DE DIFUSION -->
+  <section id="canal" class="channel">
+    <div class="container channel-grid">
+      <div class="reveal">
+        <div class="section-head">
+          <span class="eyebrow" style="color:var(--dorado-claro)">Comunidad</span>
+          <h2>Sumate a nuestro grupo <span class="heart" style="color:var(--dorado-claro)">♡</span></h2>
+          <div class="divider"></div>
+        </div>
+        <p class="desc">Enterate de nuestras novedades, promociones, próximos productos, fechas de pedidos y mucho más.</p>
+        <a href="#" class="btn btn-gold" id="channelBtn">Únete al grupo</a>
+      </div>
+
+      <div class="qr-box reveal">
+        <div class="stitched" style="padding:22px;">
+          <p style="font-family:var(--font-serif); color:var(--marron-oscuro); font-weight:600;">Escaneá el código QR<br>y seguí nuestro grupo de WhatsApp</p>
+          <div class="qr-placeholder">
+            <span class="qr-icon">▦</span>
+            <span class="label">TU QR AQUÍ</span>
+          </div>
+          <p class="caption">Novedades, ofertas y más <span class="heart">♡</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div class="container reveal">
+      <h2>¿Preparamos una bandeja para vos? <span class="heart">♡</span></h2>
+      <p>Pedinos tus frilloas y prepará tu relleno favorito.</p>
+      <a href="#" class="btn btn-primary" id="finalWhatsapp">Pedir por WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="brand-name">Entre Harina y Amor</div>
+    <p class="slogan">Casero, rico y hecho con amor <span class="heart">♡</span></p>
+    <div class="footer-links">
+      <a href="#" id="footerWhatsapp">WhatsApp</a>
+      <a href="#" id="footerChannel">Novedades</a>
+    </div>
+    <p class="thanks">Gracias por elegir un emprendimiento hecho con cariño.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------------------------------------------------
+     CONFIGURACIÓN — leída desde las variables CSS definidas
+     arriba en :root. Editar ahí arriba, no acá.
+     --------------------------------------------------------- */
+  var rootStyles = getComputedStyle(document.documentElement);
+  function cssVar(name){
+    return rootStyles.getPropertyValue(name).trim().replace(/^["']|["']$/g, '');
+  }
+
+  var WHATSAPP_NUMBER       = cssVar('--whatsapp-number');
+  var WHATSAPP_CHANNEL_URL  = cssVar('--whatsapp-channel-url');
+
+  var WHATSAPP_MESSAGE = "Hola! Quiero hacer un pedido: ";
+  var WHATSAPP_LINK = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+
+  var waTargets = [
+    'navWhatsapp','heroWhatsapp','productWhatsapp',
+    'ordersWhatsapp','finalWhatsapp','footerWhatsapp'
+  ];
+  waTargets.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el){
+      el.href = WHATSAPP_LINK;
+      el.target = "_blank";
+      el.rel = "noopener";
+    }
+  });
+
+  var channelTargets = ['channelBtn','footerChannel'];
+  channelTargets.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el){
+      el.href = WHATSAPP_CHANNEL_URL;
+      if(WHATSAPP_CHANNEL_URL !== '#'){ el.target = "_blank"; el.rel = "noopener"; }
+    }
+  });
+
+  /* ---------------- Selector de cantidad / precio ---------------- */
+  var qtyButtons = document.querySelectorAll('.qty-btn');
+  var priceAmount = document.getElementById('priceAmount');
+  var priceUnit = document.getElementById('priceUnit');
+  var originalPrice = document.getElementById('originalPrice');
+
+  qtyButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      qtyButtons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var price = btn.getAttribute('data-price');
+      var original = btn.getAttribute('data-original');
+      var unit = btn.getAttribute('data-unit');
+
+      priceAmount.textContent = price;
+      priceUnit.textContent = unit;
+      originalPrice.textContent = original ? ('$' + original) : '';
+    });
+  });
+
+  /* ---------------- Menú móvil ---------------- */
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  /* ---------------- Animaciones al hacer scroll ---------------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+})();
+</script>
+
+</body>
+</html>
